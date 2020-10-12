@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chess_board/flutter_chess_board.dart';
 import 'package:flutter_chess_board/src/chess_board.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(new MyApp());
@@ -44,10 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: GoogleFonts.sansita(
                     fontWeight: FontWeight.bold,
                     fontSize: 50,
-                  )
+                  ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               ChessBoard(
                 onMove: (move) {
                   print(move);
@@ -60,6 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 enableUserMoves: true,
                 boardType: color,
               ),
+              SizedBox(
+                height: 10,
+              ),
+              Text('Choose Chess Board Colour'),
               Row(
                 children: [
                   FlatButton(
@@ -68,7 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         color = BoardType.green;
                       });
                     },
-                    child: Text('Green'),
+                    child: Text(
+                      'Green',
+                      style: TextStyle(
+                        color: Colors.green,
+                      ),
+                    ),
                   ),
                   FlatButton(
                     onPressed: () {
